@@ -96,7 +96,7 @@ const route = useRoute('/some-path') // [!code ++]
 
 比如这些
 
-```ts
+```ts twoslash
 // 更换路由组件的 name 属性，与路由组件的 name 属性保持一致
 export function registerComponent<T extends { default: { name: string } }>(name: string, component: () => Promise<T>) {
   return () => {

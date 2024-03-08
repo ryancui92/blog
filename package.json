@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.45"
+    "@shikijs/vitepress-twoslash": "^1.1.7",
+    "vitepress": "1.0.0-rc.45",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
   }
 }

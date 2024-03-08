@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Ryan\'s Blog',
-  description: '若你喜欢怪人，其实我很美',
+  description: '装模作样五分钟，荣华富贵二十年',
   head: [
     ['link', { rel: 'icon', href: 'https://static.ryancui.com/meta-images/favicon.ico' }]
   ],
@@ -20,5 +21,10 @@ export default defineConfig({
     outline: {
       level: [2, 3],
     },
+  },
+  markdown: {
+    codeTransformers: [
+      transformerTwoslash(),
+    ],
   },
 })
