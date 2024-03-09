@@ -3,4 +3,4 @@ layout: page
 comment: false
 ---
 
-<Posts />
+<Tags />

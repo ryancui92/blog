@@ -1,9 +1,8 @@
 ---
 title: 使用 unplugin-vue-router 记录 
 date: 2024-03-07 18:00:00
+tags: [前端]
 ---
-
-# 使用 unplugin-vue-router 记录
 
 最近将一个比较小的项目重构成使用 [unglugin-vue-router](https://github.com/posva/unplugin-vue-router) 的 file-based routing, 过程比较曲折，这里记录一下遇到的问题和解决方法。
 

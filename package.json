@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev .",
@@ -14,7 +15,14 @@
   "license": "ISC",
   "devDependencies": {
     "@shikijs/vitepress-twoslash": "^1.1.7",
+    "@types/fs-extra": "^11.0.4",
+    "dayjs": "^1.11.10",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.1",
+    "gray-matter": "^4.0.3",
+    "medium-zoom": "^1.1.0",
     "vitepress": "1.0.0-rc.45",
-    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+    "vue": "^3.4.21",
+    "vue-cusdis": "^2.1.1"
   }
 }

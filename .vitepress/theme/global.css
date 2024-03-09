@@ -1,0 +1,17 @@
+.my-main {
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 4rem;
+  max-width: 48rem;
+}
+
+.my-main h1 {
+  margin: 2rem 0;
+}
+
+.medium-zoom-overlay {
+  z-index: 100;
+}
+
+.medium-zoom-image {
+  z-index: 101;
+}
