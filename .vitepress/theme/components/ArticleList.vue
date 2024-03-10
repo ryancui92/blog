@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
-import type { PostMeta } from '../meta'
+import type { PostMeta } from '../../../posts.data'
 
 withDefaults(defineProps<{
   articles: PostMeta[]

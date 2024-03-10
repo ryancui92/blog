@@ -11,6 +11,7 @@
     "strictNullChecks": true,
   },
   "include": [
+    "./**/*.ts",
     ".vitepress/theme/**/*.ts",
     ".vitepress/theme/**/*.vue",
   ],

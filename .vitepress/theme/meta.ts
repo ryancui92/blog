@@ -2,13 +2,9 @@ import dayjs from 'dayjs'
 import { globby } from 'globby'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+import type { PostMeta } from '../../posts.data'
 
-export interface PostMeta {
-  title: string
-  path: string
-  date: string
-  tags: string[]
-}
+export type { PostMeta } from '../../posts.data'
 
 export async function getPosts() {
   let paths = await getPostMDFilePaths()

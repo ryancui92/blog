@@ -2,6 +2,8 @@ import { getPosts } from '../.vitepress/theme/meta'
 
 export default {
   async paths() {
+    // FIXME: dynamic routes do not support data loader
+    // https://github.com/vuejs/vitepress/issues/2826
     const posts = await getPosts()
     const tagSet = new Set()
     for (let i = 0; i < posts.length; i++) {

@@ -23,11 +23,12 @@ export default {
   setup() {
     // vitepress 官方也许会支持
     // https://github.com/vuejs/vitepress/issues/854
+    // FIXME: 没有支持 hmr
     const route = useRoute()
     function initZoom() {
       mediumZoom('.main img', { background: 'var(--vp-c-bg)' })
     }
-    onMounted(() => initZoom)
+    onMounted(initZoom)
     watch(() => route.path, () => nextTick(initZoom))
   }
 } satisfies Theme

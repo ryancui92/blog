@@ -1,11 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { getPosts } from './theme/meta'
 import { groupByYear } from './theme/utils'
+import { getPosts } from './theme/meta'
 
 const posts = await getPosts()
 const yearGroups = groupByYear(posts)
-// TODO: 将三年前的文章归类为更早；只展示最近 30 篇？
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -40,8 +39,9 @@ export default defineConfig({
         })),
       }))
     },
-    // @ts-ignore
-    posts,
+    search: {
+      provider: 'local',
+    },
   },
   markdown: {
     codeTransformers: [

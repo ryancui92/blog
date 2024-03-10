@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+import { useData, withBase } from 'vitepress'
+import { computed } from 'vue'
+import ArticleList from './ArticleList.vue'
+import { groupByYear } from '../utils'
+import { data as posts } from '../../../posts.data'
+
+const data = computed(() => groupByYear(posts))
+</script>
+
 <template>
   <div class="my-main vp-doc">
     <h1>
@@ -12,13 +22,4 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { useData, withBase } from 'vitepress'
-import { computed } from 'vue'
-import type { PostMeta } from '../meta'
-import ArticleList from './ArticleList.vue'
-import { groupByYear } from '../utils'
 
-const { theme } = useData()
-const data = computed(() => groupByYear(theme.value.posts))
-</script>

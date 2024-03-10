@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
-import type { PostMeta } from '../meta'
 import ArticleList from './ArticleList.vue'
+import { data, type PostMeta } from '../../../posts.data'
 
-const { theme, params } = useData()
+const { params } = useData()
 
 function initTags(post: PostMeta[]) {
   const data: Record<string, PostMeta[]> = {}
@@ -24,7 +24,7 @@ function initTags(post: PostMeta[]) {
   return data
 }
 
-const data = computed(() => initTags(theme.value.posts))
+const posts = computed(() => initTags(data))
 let selectTag = ref(params.value?.tag ?? '')
 
 // set font-size
@@ -42,12 +42,12 @@ const getFontSize = (length: number) => {
     <div class="tags">
       <a
         :href="`/tags/${key}`"
-        v-for="(item, key) in data"
+        v-for="(item, key) in posts"
         class="tag"
-        :style="getFontSize(data[key].length)"
+        :style="getFontSize(posts[key].length)"
         :class="{ activetag: selectTag === key }"
       >
-        {{ key }} <span class="tag-length">{{ data[key].length }}</span>
+        {{ key }} <span class="tag-length">{{ posts[key].length }}</span>
       </a>
     </div>
 
@@ -70,7 +70,7 @@ const getFontSize = (length: number) => {
       </svg>
       <span class="header-text">{{ selectTag }}</span>
     </h4>
-    <ArticleList :articles="data[selectTag]" />
+    <ArticleList :articles="posts[selectTag]" />
   </div>
 </template>
 

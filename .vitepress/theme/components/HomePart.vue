@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-import type { PostMeta } from '../meta'
 import ArticleList from './ArticleList.vue'
+import { data } from '../../../posts.data'
 
-const { theme } = useData()
-const posts = computed<PostMeta[]>(() => theme.value.posts.slice(0, 10))
+const posts = computed(() => data.slice(0, 10))
 </script>
 
 <template>
