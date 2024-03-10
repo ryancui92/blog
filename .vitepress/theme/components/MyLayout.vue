@@ -63,11 +63,13 @@ const currentPage = computed(() => {
       </div>
     </template>
     <template #doc-after>
-      <VueCusdis
-        :key="page.relativePath"
-        :attrs="currentPage"
-        style="margin-top: 3rem;"
-      />
+      <ClientOnly>
+        <VueCusdis
+          :key="page.relativePath"
+          :attrs="currentPage"
+          style="margin-top: 3rem;"
+        />
+      </ClientOnly>
     </template>
   </Layout>
 </template>
