@@ -15,3 +15,7 @@
 .medium-zoom-image {
   z-index: 101;
 }
+
+/* TODO: change main theme color */
+:root {
+}

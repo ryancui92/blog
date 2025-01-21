@@ -70,7 +70,7 @@ const getFontSize = (length: number) => {
       </svg>
       <span class="header-text">{{ selectTag }}</span>
     </h4>
-    <ArticleList :articles="posts[selectTag]" />
+    <ArticleList :articles="posts[selectTag] ?? []" />
   </div>
 </template>
 

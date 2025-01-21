@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Ryan's Blog
-  tagline: 抬头吧，黑暗过会是晨曦，怀着乐观总有转机。
+  tagline: 「佛系」小朋友
   actions:
     - theme: brand
       text: 所有文章

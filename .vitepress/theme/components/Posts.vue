@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import ArticleList from './ArticleList.vue'
 import { groupByYear } from '../utils'

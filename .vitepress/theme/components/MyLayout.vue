@@ -2,7 +2,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { useData, useRoute } from 'vitepress'
 import dayjs from 'dayjs'
-import VueCusdis from 'vue-cusdis'
 import { computed, onMounted, watch } from 'vue'
 
 const { Layout } = DefaultTheme
@@ -61,15 +60,6 @@ const currentPage = computed(() => {
         | Copyright © 2020-{{ dayjs().get('y') }} |
         <a href="https://beian.miit.gov.cn/" target="_blank" class="footer-link">粤ICP备19115096号</a>
       </div>
-    </template>
-    <template #doc-after>
-      <ClientOnly>
-        <VueCusdis
-          :key="page.relativePath"
-          :attrs="currentPage"
-          style="margin-top: 3rem;"
-        />
-      </ClientOnly>
     </template>
   </Layout>
 </template>

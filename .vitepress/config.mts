@@ -1,15 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { groupByYear } from './theme/utils'
-import { getPosts } from './theme/meta'
-
-const posts = await getPosts()
-const yearGroups = groupByYear(posts)
+import UnoCSS from 'unocss/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Ryan\'s Blog',
-  description: '装模作样五分钟，荣华富贵二十年',
   head: [
     ['link', { rel: 'icon', href: 'https://static.ryancui.com/meta-images/favicon.ico' }]
   ],
@@ -20,6 +15,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Posts', link: '/posts' },
       { text: 'Tags', link: '/tags' },
+      { text: 'Resume', link: '/resume' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ryancui92' }
@@ -30,15 +26,6 @@ export default defineConfig({
     lastUpdated: {
       text: 'Updated at',
     },
-    sidebar: {
-      '/posts/': yearGroups.map(yearGroup => ({
-        text: yearGroup.year,
-        items: yearGroup.posts.map(post => ({
-          text: post.title,
-          link: `/${post.path}`,
-        })),
-      }))
-    },
     search: {
       provider: 'local',
     },
@@ -46,6 +33,11 @@ export default defineConfig({
   markdown: {
     codeTransformers: [
       transformerTwoslash(),
+    ],
+  },
+  vite: {
+    plugins: [
+      UnoCSS(),
     ],
   },
 })
