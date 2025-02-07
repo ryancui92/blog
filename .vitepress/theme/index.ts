@@ -27,7 +27,7 @@ export default {
     // https://github.com/vuejs/vitepress/issues/854
     const route = useRoute()
     function initZoom() {
-      mediumZoom('.main img', { background: 'var(--vp-c-bg)' })
+      mediumZoom('.main img, .my-main img', { background: 'var(--vp-c-bg)' })
     }
     onMounted(initZoom)
     watch(() => route.path, () => nextTick(initZoom))

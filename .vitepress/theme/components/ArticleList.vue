@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { withBase } from 'vitepress'
 import type { PostMeta } from '../../../posts.data'
 
 withDefaults(defineProps<{
@@ -11,17 +10,17 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="articles">
+  <div class="flex flex-col gap-2">
     <a
       :href="`/${article.path}`"
-      v-for="(article, index) in articles"
+      v-for="article in articles"
       :key="article.path"
-      class="article"
+      class="flex items-center justify-between gap-2 text-[var(--vp-c-text-2)]! hover:text-[var(--vp-c-brand)]! decoration-none! transition-all"
     >
-      <div class="title">
+      <div class="truncate">
         {{ article.title }}
       </div>
-      <div class="date">
+      <div class="font-mono text-3.5">
         {{ withoutYear ? article.date.slice(5) : article.date }}
       </div>
     </a>
@@ -54,10 +53,5 @@ withDefaults(defineProps<{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.date {
-  font-family: monospace;
-  font-size: 13px;
 }
 </style>
