@@ -1,17 +1,21 @@
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-import { groupByYear } from './theme/utils'
-import { getPosts } from './theme/meta'
-
-const posts = await getPosts()
-const yearGroups = groupByYear(posts)
+import UnoCSS from 'unocss/vite'
+import svgLoader from 'vite-svg-loader'
+import implicitFigures from 'markdown-it-implicit-figures'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Ryan\'s Blog',
-  description: '装模作样五分钟，荣华富贵二十年',
   head: [
-    ['link', { rel: 'icon', href: 'https://static.ryancui.com/meta-images/favicon.ico' }]
+    ['link', { rel: 'icon', href: 'https://static.ryancui.com/meta-images/favicon.ico' }],
+    ['script', {}, `
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "q65ils55cd");
+`]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -20,6 +24,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Posts', link: '/posts' },
       { text: 'Tags', link: '/tags' },
+      { text: 'Resume', link: '/resume' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ryancui92' }
@@ -30,15 +35,6 @@ export default defineConfig({
     lastUpdated: {
       text: 'Updated at',
     },
-    sidebar: {
-      '/posts/': yearGroups.map(yearGroup => ({
-        text: yearGroup.year,
-        items: yearGroup.posts.map(post => ({
-          text: post.title,
-          link: `/${post.path}`,
-        })),
-      }))
-    },
     search: {
       provider: 'local',
     },
@@ -46,6 +42,28 @@ export default defineConfig({
   markdown: {
     codeTransformers: [
       transformerTwoslash(),
+    ],
+    image: {
+      lazyLoading: true,
+    },
+    config: (md) => {
+      md.use(implicitFigures, {
+        figcaption: true,
+        copyAttrs: '^class$'
+      })
+    },
+  },
+  vite: {
+    plugins: [
+      UnoCSS({
+        rules: [
+          [
+            'font-mono',
+            { 'font-family': 'JetBrains Mono, monospace' },
+          ],
+        ],
+      }),
+      svgLoader(),
     ],
   },
 })

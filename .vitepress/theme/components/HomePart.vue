@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
 import { computed } from 'vue'
 import ArticleList from './ArticleList.vue'
 import { data } from '../../../posts.data'

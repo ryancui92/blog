@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import ArticleList from './ArticleList.vue'
 import { groupByYear } from '../utils'
@@ -13,10 +12,10 @@ const data = computed(() => groupByYear(posts))
     <h1>
       Posts
     </h1>
-    <div v-for="yearItem in data" style="margin-bottom: 2rem;">
-      <h4 style="margin-bottom: 0.5rem;">
+    <div v-for="yearItem in data" class="mb-8">
+      <div class="font-bold text-4.5 mb-2 font-mono">
         {{ yearItem.year }}
-      </h4>
+      </div>
       <ArticleList :articles="yearItem.posts" without-year />
     </div>
   </div>

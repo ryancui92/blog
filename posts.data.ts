@@ -1,5 +1,5 @@
 import { defineLoader } from 'vitepress'
-import fs from 'fs-extra'
+import { readFile } from 'node:fs/promises'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
 
@@ -19,7 +19,7 @@ export default defineLoader({
   async load(watchedFiles: string[]): Promise<PostMeta[]> {
     let posts: PostMeta[] = await Promise.all(
       watchedFiles.map(async (item) => {
-        const content = await fs.readFile(item, "utf-8")
+        const content = await readFile(item, 'utf-8')
         const { data } = matter(content)
         return {
           title: data.title ?? '',
@@ -27,9 +27,9 @@ export default defineLoader({
           date: dayjs(data.date).subtract(8, 'hour').format('YYYY/MM/DD'),
           tags: data.tags ?? [],
         }
-      })
+      }),
     )
     posts.sort((a, b) => dayjs(a.date).isBefore(dayjs(b.date)) ? 1 : -1)
     return posts
-  }
+  },
 })
