@@ -54,10 +54,9 @@ const currentPage = computed(() => {
       </div>
     </template>
     <template #layout-bottom>
-      <div class="footer">
-        Powered by
+      <div class="flex justify-center gap-1 my-1 text-[var(--vp-c-text-3)] text-3">
         <a href="https://vitepress.dev/" target="_blank" class="footer-link">VitePress</a>
-        | Copyright © 2020-{{ dayjs().get('y') }} |
+        | Ryan Cui 2020-{{ dayjs().get('y') }} |
         <a href="https://beian.miit.gov.cn/" target="_blank" class="footer-link">粤ICP备19115096号</a>
       </div>
     </template>
@@ -84,15 +83,6 @@ const currentPage = computed(() => {
 
 .tags-container a {
   text-decoration: none;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  gap: 3px;
-  margin: 1rem 0;
-  color: var(--vp-c-text-3);
-  font-size: 13px;
 }
 
 .footer-link {
