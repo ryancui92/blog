@@ -46,5 +46,3 @@ openssl x509 -req -sha256 -days 390 -in localhost.csr -CA RootCA.pem -CAkey Root
 ## 信任本地 RootCA
 
 这里参考原文章的描述即可。Mac 下直接双击打开之前生成的 RootCA.crt 就会打开 Mac 的钥匙串应用。调整为始终信任即可。
-
-![](https://static.ryancui.com/images/20220317150421_NCDLrX_Screenshot.png)

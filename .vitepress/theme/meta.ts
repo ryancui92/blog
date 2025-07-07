@@ -2,9 +2,9 @@ import dayjs from 'dayjs'
 import { globby } from 'globby'
 import { readFile } from 'node:fs/promises'
 import matter from 'gray-matter'
-import type { PostMeta } from '../../posts.data'
+import type { PostMeta } from '@/posts.data'
 
-export type { PostMeta } from '../../posts.data'
+export type { PostMeta } from '@/posts.data'
 
 export async function getPosts() {
   let paths = await getPostMDFilePaths()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import { useData, withBase } from 'vitepress'
+import { computed, ref } from 'vue'
+import { useData } from 'vitepress'
 import ArticleList from './ArticleList.vue'
-import { data, type PostMeta } from '../../../posts.data'
+import { data, type PostMeta } from '@/posts.data'
 
 const { params } = useData()
 

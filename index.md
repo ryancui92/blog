@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Ryan's Blog
-  tagline: 「佛系」小朋友
+  tagline: 想说你知，整个地球上，无人可使我更想奔向
   actions:
     - theme: brand
       text: 所有文章
