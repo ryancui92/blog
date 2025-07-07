@@ -308,8 +308,6 @@ private _updateLatestValue(async: any, value: Object): void {
 
 这是淘气鬼的第二个问题，在展示组件生命周期钩子调用顺序的时候，有如下的组件树（丑）结构：
 
-![组件树](https://static.ryancui.com/images/component-tree.png)
-
 请问他的 `ngAfterViewChecked` 钩子的执行顺序是啥呢？
 
 我一开始以为会是 BDCA，没错就是一个树的后序遍历。但现实却是 DBCA！这是什么鬼！
@@ -361,8 +359,6 @@ private _updateLatestValue(async: any, value: Object): void {
 
 看看你掌握了吗？下面这个组件树的 `ViewCheck` 钩子顺序是啥呢？
 
-![搞事的组件树](https://static.ryancui.com/images/component-tree-complex.png)
-
 答案看后文的图片。
 
 ### ContentCheck
@@ -370,8 +366,6 @@ private _updateLatestValue(async: any, value: Object): void {
 值得注意的是，`ContentCheck` 的顺序跟 `ViewCheck` 十分类似，也是父组件的变化检测中调用**子组件**的钩子，只不过这是在递归之前进行的调用。
 
 上文的两个组件树的 `ContentCheck` 顺序分别为：ABCD 和 ABDCEF，看看能不能明白？
-
-![结果](https://static.ryancui.com/images/result.png)
 
 ## 总结
 

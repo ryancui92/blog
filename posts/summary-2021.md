@@ -10,8 +10,6 @@ tags: [年终总结]
 
 ## 工作
 
-![](https://static.ryancui.com/images/20220128143643_sA07Bb_Screenshot.jpeg)
-
 今年的 commit 还是有点惨淡，基本没有什么提交代码到 git 的机会，主要工作都是围绕低代码进行开发，是一些 script 和常规的 Vue 组件开发。
 
 还是因为做得不够好，一些很常见的软件工程的迭代发布工具与流程其实都没有完备，因此一年下来的很多项目都挺让人难受的。
@@ -38,12 +36,7 @@ tags: [年终总结]
 
 最后就是今年基本没存到什么钱啊！各种买买买，买了太多东西了，两台 MBP、iMac、iPad Pro、iPhone 13、HomePod、PS5...未来两年都在还钱给苹果了。
 
-![](https://static.ryancui.com/images/20220128144446_yFeGut_Screenshot.jpeg)
-
-
 Herman Miller 还是有点好坐的，现在已经变成了主力椅，以后有钱再买个冈村吧。
-
-![除了贵，没有缺点](https://static.ryancui.com/images/20220128145313_gaBI14_Screenshot.jpeg)
 
 ## 旅游
 
@@ -51,13 +44,9 @@ Herman Miller 还是有点好坐的，现在已经变成了主力椅，以后有
 
 国庆汕头游就是 Chris 和 Champagne 的毕业游啦，跟上一次去汕头感觉并没有太大差别，就是这次终于去成了南澳岛（代价是要五点起床）。这次的最大惊喜必须是创弟牛肉，实在是太好吃了，好吃到去了两次。
 
-![真的好好吃](https://static.ryancui.com/images/20220128145402_wYB2V4_Screenshot.jpeg)
-
 然后休息了两天就接着出发去上海，主要目的地迪士尼！真心感受到年纪大了之后，对激烈的机动游戏真的失去了兴趣（变得怕死），还是普通的坐车车更适合我了。
 
 比较可惜的是两日票都在天气都不好，又冷又下雨，穿着雨衣还是很大的不方便。
-
-![全是人](https://static.ryancui.com/images/20220128145426_F9fOYv_Screenshot.jpeg)
 
 ## 2022 目标
 

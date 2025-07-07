@@ -10,8 +10,6 @@ tags: [前端]
 
 对于现代浏览器来说，通过 `FormData` 进行文件上传已经是很通用的做法了，再也不需要使用像构造 form 元素这种方法去做浏览器兼容。可以看到 `FormData` 的兼容性还是可以的。
 
-![CanIUse - FormData](https://static.ryancui.com/images/caniuse-formdata.png)
-
 由于正在使用 Angular，于是直接用自带的 HTTP 服务上传文件吧
 
 ```typescript
@@ -37,8 +35,6 @@ HTTP Status 400 - Required MultipartFile parameter 'file' is not present
 ```
 
 纳尼！我去看了下 Chrome dev tool，卧槽文件不见了。为了把锅分得清清楚楚明明白白，快使用 Postman！
-
-![请求正确返回](https://static.ryancui.com/images/postman-result.png)
 
 万念俱灰啊！！！！！！
 

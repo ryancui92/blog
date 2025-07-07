@@ -2,6 +2,7 @@
 title: Leaflet MovingMarker 轨迹回放功能
 date: 2018-03-12 11:42:33
 tags: [前端]
+hide: true
 ---
 
 最近有一个关于地图轨迹回放的功能，使用了 Leaflet 的 MovingMarker 插件后仍有不少问题需要解决，本文介绍了实现这个需求的过程与方案。
@@ -11,8 +12,6 @@ tags: [前端]
 ## 来自产品的需求
 
 轨迹回放往大了讲其实有点像视频播放器，有一个可拖动的指示器，地图上就是一个移动的 marker.（这里有张 10M 的动图...）
-
-<div style="display: flex; justify-content: center;"><img src="https://static.ryancui.com/images/ios-sample.gif" style="width: 40%;"></div>
 
 有几点需要注意的：
 

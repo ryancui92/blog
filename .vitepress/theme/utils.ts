@@ -1,4 +1,4 @@
-import type { PostMeta } from '../../posts.data'
+import type { PostMeta } from '@/posts.data'
 
 export function groupByYear(posts: PostMeta[]) {
   const result: {

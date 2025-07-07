@@ -86,9 +86,6 @@ import MainProject from './resume-block/MainProject.vue'
       title="Enlightening AI"
       :tags="['Vue 3', 'Naive UI', 'AI', '复杂状态管理']"
       link="https://enlighteningai.datastory.com.cn"
-      :images="[
-        'https://static.ryancui.com/images/20250207175426_iBo84k_CleanShot%202025-02-07%20at%2017.49.17@2x.jpeg',
-      ]"
     >
       <template #description>
         <div>

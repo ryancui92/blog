@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import ArticleList from './ArticleList.vue'
 import { groupByYear } from '../utils'
-import { data as posts } from '../../../posts.data'
+import { data as posts } from '@/posts.data'
 
 const data = computed(() => groupByYear(posts))
 </script>

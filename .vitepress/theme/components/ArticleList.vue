@@ -1,16 +1,27 @@
 <script setup lang="ts">
-import type { PostMeta } from '../../../posts.data'
+import type { PostMeta } from '@/posts.data'
+import dayjs from 'dayjs'
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   articles: PostMeta[]
   withoutYear?: boolean
+  useMtime?: boolean
 }>(), {
   withoutYear: false,
+  useMtime: false,
 })
+
+function getTime(article: PostMeta): string {
+  if (props.useMtime) {
+    return dayjs(article.mtime).fromNow()
+  } else {
+    return props.withoutYear ? article.date.slice(5) : article.date
+  }
+}
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-3">
     <a
       :href="`/${article.path}`"
       v-for="article in articles"
@@ -21,37 +32,8 @@ withDefaults(defineProps<{
         {{ article.title }}
       </div>
       <div class="font-mono text-3.5">
-        {{ withoutYear ? article.date.slice(5) : article.date }}
+        {{ getTime(article) }}
       </div>
     </a>
   </div>
 </template>
-
-<style scoped>
-.articles {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.article {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  color: var(--vp-c-text-2);
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.article:hover {
-  text-decoration: none;
-  color: var(--vp-c-brand);
-}
-
-.title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-</style>

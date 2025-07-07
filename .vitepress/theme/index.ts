@@ -11,6 +11,12 @@ import Resume from './components/Resume.vue'
 import 'virtual:uno.css'
 import '@shikijs/vitepress-twoslash/style.css'
 import './global.css'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+dayjs.extend(relativeTime)
+dayjs.locale('zh-CN')
 
 export default {
   extends: DefaultTheme,

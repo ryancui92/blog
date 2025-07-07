@@ -2,6 +2,7 @@
 title: Chrome 插件开发小结
 date: 2018-10-18 11:32:42
 tags: [前端]
+hide: true
 ---
 
 最近都在做 Chrome 插件的开发，虽然一开始整个插件的框不是我搭起来的，但在过程中遇到的一些问题和解决方法，也值得总结一下。
@@ -31,8 +32,6 @@ if (!this.frame.length) { // 未渲染
 其他页面的开发方式、Vuex 的使用等与平常使用基本相同。
 
 ## 三个区域 Background/Content/Frame 的通信
-
-![页面架构](https://static.ryancui.com/images/structures.png)
 
 采用插入 iframe 的方式，整个应用被划分成了三块：
 

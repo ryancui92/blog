@@ -40,8 +40,6 @@ tags: [游戏]
 
 看之前朋友圈的评价吧，感觉与十三机兵防卫圈差不多，不过更重在 trick 的 surprise 上，相反跟第一部对比下来，我觉得玩法上有点死板了。
 
-<img src="https://static.ryancui.com/images/20230123104856_b1Erts_IMG_7AF02D394C04-1.jpeg" style="margin: 0 auto; height: 450px;">
-
 ## Harvestella
 
 符文工房，牧场物语，最终幻想三合一缝合怪。又名丰饶之星。真有你的啊 SE. 一个月通关。

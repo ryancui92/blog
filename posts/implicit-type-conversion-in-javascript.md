@@ -41,8 +41,6 @@ NaN != NaN
 
 江湖传闻 JavaScript 有张让人闻风丧胆的**真值表**，我觉得吧只要把每种类型是怎么判断的弄清楚，其实是不需要去记忆这样的表的。因此我们需要了解规范里是怎么处理这些表达式的。
 
-![JavaScript 真值表](https://static.ryancui.com/images/javascript-tf-table.jpg)
-
 规范中关于上面那堆表达式是怎样求值的有好几处地方的说明，包括
 
 - [7.1 Type Conversion](http://www.ecma-international.org/ecma-262/8.0/index.html#sec-type-conversion)
@@ -68,11 +66,7 @@ ECMAScript 一共定义了七种 built-in types，因此在节 [6.1 ECMAScript L
 
 **ToPrimitive** 用于将 **Object** 转为 **Primitive Value**
 
-![ToPrimitive](https://static.ryancui.com/images/to-primitive.png)
-
 先忽略那堆 `preferredType` 的东西，对于平常遇到的对象（Object）来说，基本上都是 Ordinary 的，所以其实就是默认了 `hint = number` 再去调用 `OrdinaryToPrimitive`。
-
-![OrdinaryToPrimitive](https://static.ryancui.com/images/ordinary-to-primitive.png)
 
 由于进来的 `hint` 是 `number` 所以这个转换就是：
 
@@ -107,8 +101,6 @@ b.toString()
 
 这个方法用于将不是 **Boolean** 类型的值转换为 **Boolean** 类型。
 
-![ToBoolean](https://static.ryancui.com/images/to-boolean.png)
-
 注意几点就可以了：
 
 - 所有 **Object** 类型都会被转换为 true
@@ -118,8 +110,6 @@ b.toString()
 #### ToNumber
 
 同理，其他类型转换为 **Number** 类型。
-
-![ToNumber](https://static.ryancui.com/images/to-number.png)
 
 有比较诡异的几点：
 
@@ -147,8 +137,6 @@ Number([55, 56])
 
 了解完上面几个转换后就可以来看那一堆表达式了！首先是简单点的单目逻辑非，规范是这样的：
 
-![Logical NOT Operator](https://static.ryancui.com/images/logical-not-operator.png)
-
 哇哦，就是直接调用了 **ToBoolean**，然后取反返回。
 
 ```javascript
@@ -170,15 +158,11 @@ Number([55, 56])
 
 #### Evaluation
 
-![Evaluation](https://static.ryancui.com/images/evaluation.png)
-
 `GetValue` 就是计算一下表达式的值，`==` 和 `===` 的结果重点在 **Abstract Equality Comparison** 和 **Strict Equality Comparison** 这两个操作里。
 
 另外 `!=` 和 `!==` 则是指出了 `A != B` 与 `!(A == B)` 是**完全等价**的。在判断 `!=`/`!==` 时，其实就是在判断 `==`/`===`.
 
 #### Abstract Equality Comparison
-
-![Abstract Equality Comparison](https://static.ryancui.com/images/abstract-equality-comparison.png)
 
 好长啊，不要慌，中文翻译一下：
 
@@ -250,13 +234,9 @@ console.log(2 == {})
 
 #### Strict Equality Comparison
 
-![Strict Equality Comparison](https://static.ryancui.com/images/strict-equality-comparison.png)
-
 - 类型不同，直接返回 false
 - **Number** 类型判断：有 NaN 就 false；+0 === -0；
 - 最后调用 **SameValueNonNumber**
-
-![SameValueNonNumber](https://static.ryancui.com/images/same-value-non-number.png)
 
 总的来说，严格相等没有非严格相等这么多情况跟转换（毕竟就是同一类型了），记住了 NaN 的 corner case 和对象引用本身相等才是 true 就 ok 了。
 
@@ -282,8 +262,6 @@ NaN != NaN
 ### Relational Operators
 
 搞掂了相等，不等怎么办？不等关系是由 **Abstract Relational Comparison** 定义的。
-
-![Abstract Relational Comparison](https://static.ryancui.com/images/abstract-relational-comparison.png)
 
 这个是真的长，其实注意两点就可以了
 
