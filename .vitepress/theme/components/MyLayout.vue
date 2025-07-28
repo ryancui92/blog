@@ -34,10 +34,9 @@ const { page } = useData()
       </div>
     </template>
     <template #layout-bottom>
-      <div class="flex justify-center gap-1 my-1 text-[var(--vp-c-text-3)] text-3">
-        <a href="https://vitepress.dev/" target="_blank" class="decoration-underline underline-offset-2 transition-all hover:text-[var(--vp-c-brand)]">VitePress</a>
-        | Ryan Cui 2020-{{ dayjs().get('y') }}
-      </div>
+      <footer class="flex justify-center gap-1 my-1 text-[var(--vp-c-text-3)] text-3 no-print">
+        ryancui 2020-{{ dayjs().get('y') }}
+      </footer>
     </template>
   </Layout>
 </template>

@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <a :href="href" target="_blank" class="external-link font-mono inline-flex items-center gap-1 cursor-pointer">
     <span class="text-3.5">{{ label ?? href }}</span>
-    <ExternalIcon class="w-4 h-4" />
+    <ExternalIcon class="w-4 h-4 print:hidden" />
   </a>
 </template>
 
