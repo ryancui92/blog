@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col items-start gap-2 print:gap-1 mb-14 print:mb-6 avoid-page-break">
-    <div class="flex items-center justify-between w-full">
+    <div class="flex sm:items-center justify-between w-full flex-col sm:flex-row gap-1">
       <div class="font-bold text-5">
         {{ title }}
       </div>

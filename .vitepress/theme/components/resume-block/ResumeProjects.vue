@@ -11,6 +11,7 @@ import MainProject from './MainProject.vue'
       'https://ebefa3b.webp.li/20250730155217339.png',
       'https://ebefa3b.webp.li/20250730155544692.png',
     ]"
+    time="2025.04 - 至今"
   >
     <template #description>
       矩阵管家是一个基于 Electron 的桌面应用，智能生成素材，迅速发布各社交平台，精准分析运营数据，高效管理账号。

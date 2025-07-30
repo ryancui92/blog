@@ -1,6 +1,6 @@
 <template>
   <div class="mt-8 flex flex-col gap-1">
-    <div class="flex items-baseline gap-3 mb-4">
+    <div class="flex items-baseline gap-3 mb-4 flex-col sm:flex-row">
       <div class="text-8 font-bold">
         崔兆威
       </div>
