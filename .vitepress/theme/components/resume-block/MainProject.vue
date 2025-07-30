@@ -4,16 +4,22 @@ import TechTags from './TechTags.vue'
 
 defineProps<{
   title: string
-  tags: string[]
+  tags?: string[]
   link?: string
   images?: string[]
+  time?: string
 }>()
 </script>
 
 <template>
-  <div class="flex flex-col items-start gap-2 mb-12 avoid-page-break">
-    <div class="font-bold text-5">
-      {{ title }}
+  <div class="flex flex-col items-start gap-3 print:gap-1.5 mb-14 print:mb-6">
+    <div class="flex items-center justify-between w-full">
+      <div class="font-bold text-5">
+        {{ title }}
+      </div>
+      <div v-if="time" class="font-mono text-sm">
+        {{ time }}
+      </div>
     </div>
     <TechTags :tags="tags" />
     <ExternalLink v-if="link" :href="link" />

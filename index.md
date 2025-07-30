@@ -9,6 +9,9 @@ hero:
     - theme: brand
       text: 所有文章
       link: /posts
+    - theme: alt
+      text: Resume
+      link: /resume
 ---
 
 <HomePart />

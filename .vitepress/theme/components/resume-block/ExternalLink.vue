@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ExternalIcon from './external.svg?component'
+import LinkIcon from './link.svg?component'
 
 defineProps<{
   href: string
@@ -9,8 +10,8 @@ defineProps<{
 
 <template>
   <a :href="href" target="_blank" class="external-link font-mono inline-flex items-center gap-1 cursor-pointer">
+    <LinkIcon class="w-4 h-4" />
     <span class="text-3.5">{{ label ?? href }}</span>
-    <ExternalIcon class="w-4 h-4 print:hidden" />
   </a>
 </template>
 
