@@ -49,8 +49,26 @@ export const skills: string[] = [
 
 export const mainProjects: ResumeProject[] = [
   {
+    title: 'EnlightAI',
+    time: '2026.04 - 至今',
+    tags: ['Vue 3', 'TypeScript', 'Electron', 'AI Agent', 'MCP', 'SSE'],
+    link: 'https://enlightai.datastory.com.cn',
+    images: [
+      'https://ebefa3b.webp.li/CleanShot%202026-08-13%20at%2016.00.46@2x.png',
+    ],
+    description:
+      'EnlightAI 是一个 AI Agent 协作平台，Web 与 Electron 桌面双端同构，覆盖 Agent/Skill/MCP 资源生态、计划任务（Plan/Issue）编排与知识库管理，并可在桌面端编排本地 Claude Code / Codex runtime 自动执行任务。',
+    items: [
+      '基于 Vue 3 单一代码源构建 Web 与 Electron 双端，主进程统一持有凭证、renderer 经受限 preload 桥访问本地能力，并对 IPC 调用方做可信校验',
+      '自研 <em fancy>@enlighten/local-sidecar</em> 桌面 runtime 编排层，池化驱动 Claude Code / Codex / 内置 runtime 子进程，支持断点续跑、打断引导与多级权限预设',
+      '主导 Agent/Skill/MCP 市场（Hub）的创建、上架与订阅全链路，以及本地↔云 Skill 发布同步（内容哈希预检 + 冲突状态机）',
+      '对接 <em fancy>Anthropic 风格 SSE 事件协议</em>，云/本地双执行链路共用一套会话模型，桌面 runtime turn 事件经 IPC 实时回流渲染',
+      '实现 Plan/Issue 看板、甘特图与 DAG 编排及审核轮机制，axios 拦截器统一注入 space_id + 路由级 403 双重权限体系',
+    ],
+  },
+  {
     title: '矩阵管家',
-    time: '2025.04 - 至今',
+    time: '2025.04 - 2026.03',
     tags: ['Electron', 'Vue 3', 'Element Plus'],
     images: [
       'https://ebefa3b.webp.li/20250730155217339.png',
@@ -205,7 +223,11 @@ export const jobs: ResumeJob[] = [
     title: '广州数说故事科技有限公司',
     time: '2018.09 - 至今',
     position: '高级前端开发工程师',
-    items: ['平台产品前端技术侧负责人，制定技术方案，代码审核，带新人等'],
+    items: [
+      '平台产品前端技术侧负责人，制定技术方案、代码审核，直接负责多个核心项目的前端开发与交付',
+      '带领 10 余人前端团队约两年，负责目标拆解、任务分配与项目进度把控',
+      '搭建团队研发规范与成长机制，通过 Code Review、技术分享提升整体产出质量',
+    ],
   },
   {
     title: '广州科腾信息技术有限公司',
