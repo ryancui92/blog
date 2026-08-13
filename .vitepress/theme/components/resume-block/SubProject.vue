@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import ExternalLink from './ExternalLink.vue'
 import TechTags from './TechTags.vue'
+import type { SubProjectData } from './resume-content'
 
 defineProps<{
-  title: string
-  tags?: string[]
-  link?: string
+  project: SubProjectData
 }>()
 </script>
 
@@ -16,10 +15,17 @@ defineProps<{
     b-solid b-1px b-[rgba(221,221,221,0.2)] print:b-0 print:b-l-2px"
   >
     <div class="text-4.2 font-bold mb-2">
-      {{ title }}
+      {{ project.title }}
     </div>
-    <TechTags :tags="tags" class="mb-1" />
-    <ExternalLink v-if="link" :href="link" />
-    <slot />
+    <TechTags :tags="project.tags" class="mb-1" />
+    <ExternalLink v-if="project.link" :href="project.link" />
+    <div v-if="project.description" v-html="project.description" />
+    <ul v-if="project.items">
+      <li
+        v-for="item in project.items"
+        :key="item"
+        v-html="item"
+      />
+    </ul>
   </div>
 </template>

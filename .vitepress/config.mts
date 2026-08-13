@@ -49,6 +49,9 @@ export default defineConfig({
     },
   },
   vite: {
+    server: {
+      allowedHosts: ['ryancui.netlify.app'],
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(import.meta.resolve('..')),
